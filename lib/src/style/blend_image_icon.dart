@@ -43,8 +43,8 @@ class BlendImageIcon<T> extends StatelessWidget {
       var showRawImage = kIsWeb || color == null;
       if (showRawImage) {
         return SizedBox(
-          width: s,
-          height: s,
+          width: 18,
+          height: 18,
           child: image as Widget,
         );
       }
