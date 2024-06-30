@@ -95,6 +95,8 @@ class ConvexAppBar extends StatefulWidget {
   /// Tab item builder.
   final DelegateBuilder itemBuilder;
 
+  final TextStyle? textStyle;
+
   /// Badge chip builder.
   final ChipBuilder? chipBuilder;
 
@@ -209,6 +211,7 @@ class ConvexAppBar extends StatefulWidget {
     TabStyle? style,
     Curve? curve,
     ChipBuilder? chipBuilder,
+    TextStyle? textStyle,
   }) : this.builder(
           key: key,
           itemBuilder: supportedStyle(
@@ -235,6 +238,7 @@ class ConvexAppBar extends StatefulWidget {
           cornerRadius: cornerRadius,
           curve: curve ?? Curves.easeInOut,
           chipBuilder: chipBuilder,
+          textStyle: textStyle,
         );
 
   /// Define a custom tab style by implement a [DelegateBuilder].
@@ -271,6 +275,7 @@ class ConvexAppBar extends StatefulWidget {
     this.cornerRadius,
     this.curve = Curves.easeInOut,
     this.chipBuilder,
+    this.textStyle,
   })  : assert(top == null || top <= 0, 'top should be negative'),
         assert(initialActiveIndex == null || initialActiveIndex < count,
             'initial index should < $count'),
@@ -369,6 +374,7 @@ class ConvexAppBar extends StatefulWidget {
 class ConvexAppBarState extends State<ConvexAppBar>
     with TickerProviderStateMixin {
   int? _currentIndex;
+
   /// get index
   int? get currentIndex => _currentIndex;
   int _warpUnderwayCount = 0;

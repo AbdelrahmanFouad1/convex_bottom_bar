@@ -53,7 +53,7 @@ class FixedCircleTabStyle extends InnerBuilder {
         height: style.layoutSize,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: c,
+          color: Color(0XFF5A28C8),
         ),
         margin: EdgeInsets.all(margin),
         child: BlendImageIcon(
@@ -72,7 +72,14 @@ class FixedCircleTabStyle extends InnerBuilder {
     );
     var children = noLabel
         ? <Widget>[icon]
-        : <Widget>[icon, Text(item.title ?? '', style: textStyle)];
+        : <Widget>[
+            icon,
+            Text(item.title ?? '',
+                style: textStyle.copyWith(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 12,
+                ))
+          ];
     return Container(
       padding: EdgeInsets.only(bottom: 2),
       child: Column(

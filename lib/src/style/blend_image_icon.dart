@@ -61,6 +61,6 @@ class BlendImageIcon<T> extends StatelessWidget {
         ),
       );
     }
-    return Icon(image as IconData, size: s, color: color);
+    return Icon(image as IconData, size: 28, color: color);
   }
 }
